@@ -1,1 +1,1 @@
-routers = dict(BASE = dict(default_application='webapp'), )
+routers = dict(BASE = dict(default_application='dibsa'), )

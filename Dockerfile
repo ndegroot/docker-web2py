@@ -82,7 +82,7 @@ RUN apt-get -y install python3-authlib
 RUN apt-get -y install python3-blinker
 #RUN apt-get -y install python3-dill
 RUN pip3 install dill --break-system-packages
-RUN pip3 install csv23 --break-system-packages
+#RUN pip3 install csv23 --break-system-packages
 RUN pip3 install geraldo3 --break-system-packages
 
 
