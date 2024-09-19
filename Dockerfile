@@ -61,28 +61,23 @@ RUN apt-get -y install python3-pyasn1 && \
     apt-get -y install python3-pyparsing && \
     apt-get -y install python3-regex
 RUN apt-get -y install python3-reportlab && \
-    apt-get -y install python3-reportlab-accel && \
-    apt-get -y install python3-requests && \
-    apt-get -y install python3-requests-toolbelt
-RUN apt-get -y install python3-rich
-#    apt-get -y install python3-secretstorage && \
+    apt-get -y install python3-reportlab-accel
+#    apt-get -y install python3-requests && \
+#    apt-get -y install python3-requests-toolbelt
 # RUN apt-get -y install python3-selenium
 RUN apt-get -y install python3-six
 RUN apt-get -y install python3-soupsieve && \
     apt-get -y install python3-typing-extensions && \
     apt-get -y install python3-tz && \
-    apt-get -y install python3-unicodecsv && \
     apt-get -y install python3-urllib3 && \
     apt-get -y install python3-wheel
-# RUN apt-get -y install python3-2to3
 RUN apt-get -y install python3-yaml
 RUN apt-get -y install python3-pandas
 RUN apt-get -y install python3-matplotlib
 RUN apt-get -y install python3-authlib
 RUN apt-get -y install python3-blinker
-#RUN apt-get -y install python3-dill
+#RUN apt-get -y install python3-dill # older vwrsion, not working use recent pypi version instead
 RUN pip3 install dill --break-system-packages
-#RUN pip3 install csv23 --break-system-packages
 RUN pip3 install geraldo3 --break-system-packages
 
 
@@ -114,7 +109,7 @@ ADD uwsgi-emperor.conf /etc/init/uwsgi-emperor.conf
 ADD supervisor-app.conf /etc/supervisor/conf.d/
 
 # get and install web2py
-RUN wget http://web2py.com/examples/static/web2py_src.zip && \
+RUN wget https://web2py.com/examples/static/web2py_src.zip && \
     mkdir tmp && \
 	unzip web2py_src.zip -d tmp && \
 	mv tmp/web2py web2py && \
